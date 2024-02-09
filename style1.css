@@ -1,0 +1,152 @@
+body
+{ 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background: #d0aac2;
+}
+
+.wrapper
+{
+    width: 720px;
+    background-color: white;
+    border-radius: 15px;
+    padding:25px;
+}
+
+.wrapper .boxForText
+{
+    border: 1px solid grey;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.wrapper .input-field
+{
+    z-index: -999;
+    opacity: 0;
+    position: absolute;
+}
+
+.boxForText .textToType
+{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.textToType::-webkit-scrollbar
+{
+    width: 0px;
+}
+
+.textToType p
+{
+    font-size: 22px;
+    text-align: justify;
+    letter-spacing: 1px; 
+    word-break: break-all; 
+}
+
+.textToType p span
+{
+    position: relative;
+}
+.textToType p span.correct
+{
+    color: green;
+}
+.textToType p span.incorrect
+{
+    color:#cb3439;
+    background-color: #ffc0cb;
+    outline: 1px solid wheat;
+    border-radius: 2px;
+}
+
+.textToType p span.active
+{
+    color: #d579b3;
+}
+.textToType p span.active::before
+{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background-color: #d579b3;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+.wrapper .info-about-test 
+{
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.info-about-test .result-details
+{  
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    
+}
+
+.result-details li 
+{
+    display: flex;
+    list-style: none;
+}
+
+.result-details li span
+{
+    justify-content: center;
+    align-items: center;
+    display: block;
+    font-size: 20px;
+    margin-top: 13px;
+    margin-left: 5px;
+}
+
+
+
+.container-for-box
+{
+    display:flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.try-again-button
+{
+    border: none;
+    border-radius: 10px;
+    border-color: transparent;
+    width: 100px;
+    height: 30px;
+    background-color: #d0aac2;
+    transition: 0.5s;
+}
+
+.try-again-button:hover
+{
+    cursor: pointer;
+    background-color:#ed79c3;
+}
+
+.try-again-button:active
+{
+    transform: scale(0.95);
+}
